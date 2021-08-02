@@ -7,6 +7,7 @@ LABEL OS=Centos7
 COPY container-image-root/Dante.list.txt /
 # Update system packages:
 RUN yum -y update > /dev/null 2>&1;\
+    yum -y install logrotate > /dev/null 2>&1;\
 # Install dante server.
     yum -y install http://mirror.ghettoforge.org/distributions/gf/gf-release-latest.gf.el7.noarch.rpm > /dev/null 2>&1;\
     yum -y --enablerepo=gf-plus install dante-server > /dev/null 2>&1;\
