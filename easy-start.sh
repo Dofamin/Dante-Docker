@@ -10,6 +10,7 @@ docker create \
   -p 1010:443/tcp \
   -p 1010:443/udp \
   -v /srv/Dante/container-image-root/:/Dante/\
+  -v /srv/Dante/container-image-root/logrotate/:/etc/logrotate.d/\
   --restart unless-stopped \
   dante:latest
 
