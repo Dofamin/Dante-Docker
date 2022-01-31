@@ -29,6 +29,25 @@ docker create \
 docker start Dante
 ```
 
+Or just pull from GitHub
+
+```shell
+docker pull ghcr.io/dofamin/dante-docker:main
+
+docker rm --force Dante
+
+docker create \
+  --name=Dante \
+  -p 1010:443/tcp \
+  -p 1010:443/udp \
+  -v /srv/Dante/container-image-root/:/Dante/\
+  --restart unless-stopped \
+  ghcr.io/dofamin/dante-docker:main
+
+docker start Dante
+
+```
+
 ---
 
 ### WARNING
