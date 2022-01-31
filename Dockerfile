@@ -21,7 +21,7 @@ RUN apt -y update > /dev/null 2>&1;\
         User=$(echo $line| awk -F":" '{print $1}') ;\
         Password=$(echo $line| awk -F":" '{print $2}') ;\
         adduser $User -M -s /sbin/nologin ;\
-        echo "$Password" | passwd $User --stdin;\
+        echo "$User:$Password" | chpasswd;\
     done < /Dante.list.txt ;\
     (crontab -l 2>/dev/null; echo "0 0 * * * /usr/sbin/logrotate /Dante/logrotate/logrotate_sockd.conf >> /var/log/cron.log 2>&1") | crontab - ;\
 # Cleanup
