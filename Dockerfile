@@ -29,4 +29,4 @@ RUN apt -y update > /dev/null 2>&1;\
 # Expose Ports:
 EXPOSE 443/tcp 443/udp
 # CMD
-CMD ["/bin/bash" , "-c" , "service ntp start && service cron start && /usr/sbin/sockd -f /Dante/sockd.conf"]
+CMD ["/bin/bash" , "-c" , "service ntp start && service cron start && /usr/sbin/danted -f /Dante/sockd.conf"]
