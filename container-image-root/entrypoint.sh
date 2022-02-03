@@ -10,7 +10,7 @@ if [ ! -f /Dante/Users.list.txt ]; then
 fi
 
 if [ ! -f /Dante/logrotate/logrotate_sockd.conf ]; then
-    cp /logrotate_sockd.conf /Dante/logrotate/logrotate_sockd.conf
+    cp /logrotate/logrotate_sockd.conf /Dante/logrotate/logrotate_sockd.conf
 fi
 
 function update_users() {
