@@ -16,7 +16,7 @@ RUN apt -y update > /dev/null 2>&1;\
     apt -y install curl wget ntp logrotate > /dev/null 2>&1;\
 # Install dante server.
     apt -y install dante-server > /dev/null 2>&1;\
-    mkdir -p /Dante && mkdir -p /Dante/logrotate ;\
+    mkdir -p /Dante ;\
     (crontab -l 2>/dev/null; echo "0 0 * * * /usr/sbin/logrotate /Dante/logrotate/logrotate_sockd.conf >> /var/log/cron.log 2>&1") | crontab - ;\
 # Cleanup
     apt-get clean > /dev/null 2>&1;
