@@ -30,7 +30,8 @@ function update_users() {
 }
 
 echo "Updating users."
-update_users
+update_users >/dev/null 2>&1
+echo "!!! Users updated !!!"
 service ntp start
 service cron start
 /usr/sbin/danted -f /Dante/sockd.conf
