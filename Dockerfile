@@ -13,7 +13,7 @@ RUN apt -y update > /dev/null 2>&1;\
     ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone > /dev/null 2>&1;\
     dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1;\
 # Install dependencies, you would need common set of tools.
-    apt -y install curl wget ntp logrotate > /dev/null 2>&1;\
+    apt -y install curl wget ntp logrotate cron > /dev/null 2>&1;\
 # Install dante server.
     apt -y install dante-server > /dev/null 2>&1;\
     mkdir -p /Dante ;\
