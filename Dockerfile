@@ -24,4 +24,3 @@ RUN apt -y update > /dev/null 2>&1;\
 EXPOSE 443/tcp 443/udp
 # CMD
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
-#CMD ["/bin/bash" , "-c" , "service ntp start && service cron start && /usr/sbin/danted -f /Dante/sockd.conf"]

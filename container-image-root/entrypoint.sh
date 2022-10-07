@@ -38,4 +38,10 @@ update_users >/dev/null 2>&1
 echo "!!! Users updated !!!"
 service ntp start
 service cron start
+
+if [ "$1" == "" ];
+then
 /usr/sbin/danted -f /Dante/sockd.conf
+else
+exec "$1"
+fi
